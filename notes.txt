@@ -1,0 +1,34 @@
+$match => used to filter docum(based on condition)
+$project => select some specific field from collection 
+$group => group document based on some value
+$sort => sort data 
+$skip => skip no. of documents
+$limit => limit no. of documents
+$unwind => deconstruct an array, flatten the array
+$out => write document output
+
+accumulators
+-------------
+
+sum
+count
+avg
+max
+min
+first 
+last
+
+
+//   let filteredProducts = products // copy by reference => same address
+  //   if (category) {
+  //     filteredProducts = filteredProducts.filter((pd) => pd.category === category)
+  //   }
+  //   if (rating) {
+  //     filteredProducts = filteredProducts.filter((pd) => pd.rating === +rating)
+  //   }
+
+  const filteredProducts = products.filter(
+    (pd) =>
+      (!category || pd.category === category) &&
+      (!rating || pd.rating === +rating)
+  );
